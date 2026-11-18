@@ -1,0 +1,48 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --panel-2: #0b1220;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #22d3ee;
+  --green: #16a34a;
+  --amber: #f59e0b;
+  --red: #ef4444;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; }
+
+.app-header { padding: 12px 16px; border-bottom: 1px solid #1f2937; background: #0b1220; position: sticky; top: 0; z-index: 10; }
+.app-root { display: flex; flex-direction: column; height: 100%; }
+
+.crm-shell { display: grid; grid-template-columns: 280px 1fr 380px; gap: 12px; height: calc(100% - 58px); padding: 12px; }
+.panel { background: var(--panel); border: 1px solid #1f2937; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.panel h2 { margin: 0; padding: 12px; border-bottom: 1px solid #1f2937; font-size: 16px; }
+.panel-content { padding: 12px; overflow: auto; }
+
+.member-item { padding: 10px; border-bottom: 1px solid #1f2937; cursor: pointer; }
+.member-item:hover { background: #0b1220; }
+.member-item.active { background: #0b1220; border-left: 3px solid var(--accent); }
+
+.badge { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 8px; font-size: 12px; background: #0b1220; border: 1px solid #243145; color: var(--muted); }
+.tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.risk-banner { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 8px; margin-bottom: 8px; }
+.risk-red { background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.35); }
+.risk-amber { background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); }
+.risk-green { background: rgba(22, 163, 74, 0.12); border: 1px solid rgba(22, 163, 74, 0.35); }
+
+.nba-list { display: flex; flex-direction: column; gap: 8px; }
+.nba-button { padding: 10px 12px; text-align: left; border-radius: 6px; border: 1px solid #243145; background: #0b1220; color: var(--text); cursor: pointer; }
+.nba-button:hover { background: #0e1930; }
+
+.note-editor { width: 100%; min-height: 140px; background: #0b1220; border: 1px solid #243145; color: var(--text); border-radius: 6px; padding: 8px; }
+
+.flow { display: flex; flex-direction: column; gap: 8px; }
+.flow .row { display: flex; gap: 8px; align-items: center; }
+.flow button { background: var(--accent); color: #00121a; border: none; border-radius: 6px; padding: 8px 10px; cursor: pointer; font-weight: 600; }
+.flow a { color: #5eead4; }
+
+.muted { color: var(--muted); }
+

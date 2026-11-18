@@ -1,0 +1,81 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "Maria Rivera",
+      "age": 29,
+      "pronouns": "she/her",
+      "phone": "(555) 201-2211",
+      "email": "maria.r@example.com",
+      "tags": ["SMI", "Medicaid"],
+      "context": {
+        "notes": "Member said she has been feeling hopeless and at times 'not wanting to live'. Reports poor sleep. No plan disclosed, but past attempt 1y ago.",
+        "flags": {
+          "cssrs_recent_positive": true,
+          "recent_discharge_within_30d": false,
+          "fuh7_done": false,
+          "low_risk": false
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jamal Harris",
+      "age": 41,
+      "pronouns": "he/him",
+      "phone": "(555) 778-1033",
+      "email": "jamal.h@example.com",
+      "tags": ["SMI", "Post-discharge"],
+      "context": {
+        "notes": "Discharged from ED 5 days ago after stabilization. Says he's okay today. Has not yet had 7-day follow-up.",
+        "flags": {
+          "cssrs_recent_positive": false,
+          "recent_discharge_within_30d": true,
+          "fuh7_done": false,
+          "low_risk": false
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ava Chen",
+      "age": 34,
+      "pronouns": "she/they",
+      "phone": "(555) 990-4401",
+      "email": "ava.c@example.com",
+      "tags": ["Recovery"],
+      "context": {
+        "notes": "Stable mood, engaged in WRAP. Interested in joining a local peer arts group.",
+        "flags": {
+          "cssrs_recent_positive": false,
+          "recent_discharge_within_30d": false,
+          "fuh7_done": true,
+          "low_risk": true
+        }
+      }
+    },
+    {
+        "id": 4,
+        "name": "Derrick Johnson",
+        "age": 52,
+        "pronouns": "he/him",
+        "phone": "(555) 321-7789",
+        "email": "derrick.j@example.com",
+        "tags": ["Crisis Risk", "Comorbidities", "SDOH"],
+        "context": {
+          "notes": "Member has schizoaffective disorder and diabetes. Reports high blood sugar last week and missed insulin refill. Missed therapy group. Worried about losing current room and has limited food access.",
+          "flags": {
+            "cssrs_recent_positive": false,
+            "recent_discharge_within_30d": true,
+            "fuh7_done": false,
+            "low_risk": false,
+            "med_adherence_issue": true,
+            "sdoh_housing_insecure": true,
+            "sdoh_food_insecure": true
+          } 
+        }
+      }
+
+  ]
+}
+

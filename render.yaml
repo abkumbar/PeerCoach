@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: peer-guide-coach-backend
+    env: python
+    plan: free
+    buildCommand: |
+      pip install -r backend/requirements.txt
+    startCommand: |
+      uvicorn backend.app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: FRONTEND_ORIGIN_REGEX
+        # Allow localhost dev and any onrender.com frontend by default
+        value: ^https?://(localhost|127\.0\.0\.1)(:\d+)?$|^https?://([a-zA-Z0-9-]+\.)*onrender\.com$
+
+  - type: web
+    name: peer-guide-coach-frontend
+    # plan: free
+    runtime: static
+    buildCommand: |
+      cd frontend && npm ci && npm run build
+    staticPublishPath: frontend/dist
+    envVars:
+      # Set this to the backend's Render URL after it's created, e.g.
+      # https://peer-guide-coach-backend.onrender.com
+      - key: VITE_API_URL
+        value: ""

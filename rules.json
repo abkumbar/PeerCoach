@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "rules": [
+    {
+      "id": "risk_cssrs_positive_flag",
+      "if_any": [
+        "context.flags.cssrs_recent_positive == true",
+        "context.notes.toLowerCase().includes('suicid')"
+      ],
+      "risk": "red",
+      "actions": [
+        {
+          "id": "act_cssrs",
+          "label": "Run brief C-SSRS / escalate",
+          "priority": 1
+        },
+        {
+          "id": "act_safety_plan",
+          "label": "Confirm/create Safety Plan",
+          "priority": 2
+        }
+      ],
+      "rationale": "Possible or confirmed suicide risk requires escalation and safety planning."
+    },
+    {
+      "id": "post_discharge_no_fuh7",
+      "if_all": [
+        "context.flags.recent_discharge_within_30d == true",
+        "context.flags.fuh7_done == false"
+      ],
+      "risk": "amber",
+      "actions": [
+        {
+          "id": "act_followup",
+          "label": "Schedule 7-day follow-up",
+          "priority": 1
+        },
+        {
+          "id": "act_barriers",
+          "label": "Check barriers (transport/pharmacy)",
+          "priority": 2
+        }
+      ],
+      "rationale": "Post-discharge patients must have follow-up within 7 days to reduce readmission risk."
+    },
+    {
+      "id": "low_risk_recovery",
+      "if_all": [
+        "context.flags.low_risk == true"
+      ],
+      "risk": "green",
+      "actions": [
+        {
+          "id": "act_recovery",
+          "label": "Set one small recovery goal",
+          "priority": 1
+        }
+      ],
+      "rationale": "For stable members, focus on recovery-oriented goals and engagement."
+    }
+  ]
+}
